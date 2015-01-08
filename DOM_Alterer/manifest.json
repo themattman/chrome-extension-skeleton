@@ -1,0 +1,25 @@
+{
+    "name": "DOM_Alterer",
+    "description": "Makes trivial change to every webpage",
+    "version": "0.1",
+    "manifest_version": 2,
+    "content_scripts": [
+	{
+	    "matches": [
+		"http://*/*",
+		"https://*/*"
+	    ],
+	    "css": [
+		"header_remover.css"
+	    ],
+	    "js": [
+		"communicator.js"
+	    ]
+	}
+    ],
+    "background": {
+	"scripts": [
+	    "background.js"
+	]
+    }
+}
