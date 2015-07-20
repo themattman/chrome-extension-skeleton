@@ -19,5 +19,4 @@ This extension rewrites youtube URLs into youtubeonrepeat ones automatically.
 6) Ensure the `Enabled` box is checked next to your extension.
 
 Now your extension should be running! Check with the `background page` link
-underneath your extension to look at logs from the background scripts in the
-extension.
+below your extension to look at logs from all the pages that get redirected.
