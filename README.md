@@ -6,7 +6,7 @@ This extension rewrites youtube URLs into youtubeonrepeat ones automatically.
 
 1) Clone this repo or copy these files anywhere on your machine
 
-`$ git clone https://github.com/themattman/chrome-extension-skeleton`
+`$ git clone https://github.com/themattman/chrome-extension-skeleton -b youtube`
 
 2) Open a new tab in a Chrome browser and go to `chrome://extensions`
 
