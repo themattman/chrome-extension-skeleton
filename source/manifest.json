@@ -1,15 +1,12 @@
 {
-    "name": "DOM_Alterer",
-    "description": "Makes trivial change to every webpage",
+    "name": "Link Rewriter",
+    "description": "Redirect Youtube links to Youtubeonrepeat",
     "version": "0.1",
     "manifest_version": 2,
     "content_scripts": [
 	{
 	    "matches": [
-		"http://*youtube.com/*",
-		"https://*youtube.com/*"
-	    ],
-	    "css": [
+		"https://www.youtube.com/*"
 	    ],
 	    "js": [
 		"redirecter.js"

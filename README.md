@@ -1,5 +1,6 @@
-# chrome-extension-skeleton
-A canvas with which you can paint
+# chrome-extension-skeleton | Youtube -> Youtubeonrepeat
+
+This extension rewrites youtube URLs into youtubeonrepeat ones automatically.
 
 ## Installation
 
@@ -9,11 +10,11 @@ A canvas with which you can paint
 
 2) Open a new tab in a Chrome browser and go to `chrome://extensions`
 
-3) Check the box next to developer mode.
+3) Check the box next to `developer mode` on the top right of the page.
 
 4) Click `Load unpacked extension...`
 
-5) Browse to and select the directory containing your custom extension.
+5) Browse to and select the directory containing your custom extension. For this repo, select the `chrome-extension-skeleton/source` folder.
 
 6) Ensure the `Enabled` box is checked next to your extension.
 
