@@ -9,7 +9,26 @@
 date = new Date().toLocaleString();
 console.log(date, '| this thing is on');
 
+history = {};
+extension_enabled = true;
+
+chrome.browserAction.onClicked.addListener(function(tab) {
+	extension_enabled = !extension_enabled;
+	console.log("extension enabled", extension_enabled);
+});
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    date = new Date().toLocaleString();
-    console.log(date, '|', sender.url, '|', sender.tab.title);
+	if (request.msg === "requestRedirect") {
+		if (extension_enabled) {
+			console.log("redirect approved @", sender.tab.url);
+			sendResponse({msg: "approved"});
+		} else {
+			console.log("redirect denied @", sender.tab.url);
+			sendResponse({msg: "denied"});
+		}
+	} else {
+	    date = new Date().toLocaleString();
+	    console.log(date, '|', sender.url, '|', sender.tab.title);
+	    history[date] = sender.url + " | " + sender.tab.title;
+	}
 });

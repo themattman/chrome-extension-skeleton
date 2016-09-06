@@ -6,12 +6,20 @@
 //          support https, I have to convert the protocol too.
 
 console.log("ok, this extension thing works");
-console.log('redirecting...');
 
-setTimeout(function(){
-    // For more, see: https://developer.chrome.com/extensions/messaging
-    chrome.runtime.sendMessage({}, function(response) {});
+chrome.runtime.sendMessage({msg: "requestRedirect"}, function(response) {
+	console.log("requestRedirect");
+	console.log(response);
+	if (response.msg === "approved") {
+		console.log("approved!");
+		redirectPage();
+	} else {
+		console.log("denied!");
+	}
+});
+
+function redirectPage() {
+	chrome.runtime.sendMessage({}, function(response) {});
     cur_location = window.location.href.replace('youtube', 'youtubeonrepeat');
-    // Redirect to the new page
     window.location.href = cur_location.replace('https', 'http');
-}, 1000);
+}
